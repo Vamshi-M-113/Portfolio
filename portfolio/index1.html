@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Digital Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+   
+    <!-- Header Section -->
+    <div id="header">
+        <div class="Container">
+            <div class="nav">
+                <h1><span>M</span>achapathri Vamshi</h1>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="header-text">
+                <p class="fade-in">Web Designer</p>
+                <h1 class="slide-up">Hi, I'm <span>Machapathri Vamshi</span><br> A Curious Web Designer<br> from India </h1>
+                <a href="#projects" class="btn hero-btn">Explore My Work</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img id="profile-pic" src="main.jpg" class="fade-in" alt="Profile Picture">
+                    <input type="file" id="upload-image" accept="image/*">
+                </div>
+                
+                <div class="about-col-2 slide-up">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Greetings! I’m Machapathri Vamshi, a student dedicated to advancing my proficiency in Web Development and Web Design. I'm actively honing my abilities to create dynamic, intuitive websites and applications. Rooted in Information Technology, I'm committed to achieving mastery in crafting seamless digital experiences that foster engagement and yield tangible outcomes.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <!-- Skills with Progress Bars -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span>
+                                <div class="skill-bar"><span style="width: 90%;"></span></div>
+                            </li>
+                            <li><span>Data Structures</span>
+                                <div class="skill-bar"><span style="width: 80%;"></span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024-current</span><br>Internship on Web Development at Shripada Groups</li>
+                            <li><span>2024</span><br>Bootcamp on HTML & CSS at DevTown.</li>
+                            <li><span>2024</span><br>Bootcamp on Python & AI at DevTown.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-26(current)</span><br>Pursuing my B.Tech at KITS, Warangal.</li>
+                            <li><span>2021</span><br>Intermediate from Ramappa Junior College, Hanamakonda.</li>
+                            <li><span>2019</span><br>SSC from JSM High School, Warangal.</li>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title fade-in">Projects</h1>
+            <div class="projects-list">
+                <div class="project-card">
+                    <i class="fa-solid fa-user"></i>
+                    <h2>Personal Portfolio</h2>
+                    <p>Created my Personal Portfolio Website using HTML, CSS & JS.</p>
+                    <a href="#">Learn more</a>
+                </div>
+
+                <div class="project-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Expense Tracker</h2>
+                    <p>Created an Expense Tracker using HTML, CSS & JS.</p>
+                    <a href="#">Learn more</a>
+                </div>
+
+                <div class="project-card">
+                    <i class="fa-brands fa-amazon"></i>
+                    <h2>Amazon Clone</h2>
+                    <p>Created the Amazon Clone using HTML, CSS & JS.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="Contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title slide-up">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>vamshimachapathri@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91 8074108954</p>
+                    <a href="https://in.docworkspace.com/d/sINSi75GsApjz6MYG?sa=601.1037" class="btn" download>Download Resume</a>
+                    <div class="social-icons">
+                        <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switch functionality
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname)
+        {
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+        
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // Animate skill bars on scroll
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll('.skill-bar span').forEach(bar => {
+                bar.style.width = bar.getAttribute("style").split(':')[1];
+            });
+        });
+
+        // Profile picture upload with localStorage
+        const uploadInput = document.getElementById("upload-image");
+        const profilePic = document.getElementById("profile-pic");
+
+        // Load saved image from localStorage if available
+        if(localStorage.getItem("profileImage")){
+            profilePic.src = localStorage.getItem("profileImage");
+        }
+
+        uploadInput.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePic.src = e.target.result;
+                    localStorage.setItem("profileImage", e.target.result); // save image persistently
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+    <script src="https://kit.fontawesome.com/857fbf90f7.js" crossorigin="anonymous"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwFzW2QGerC2jQmZD-huYeGKfgopyghnLwiONuScLL-5cKHTcuke1Lkl8691NLzzrGu/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerText = "Message sent successfully!";
+                setTimeout(function(){
+                    msg.innerText = "";
+                },5000)
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
